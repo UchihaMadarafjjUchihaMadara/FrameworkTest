@@ -1,0 +1,13 @@
+#ignore these files
+/.metadata
+/.recommenders
+/Servers
+/RemoteSystemsTempFiles
+
+/SSM2Demo/.settings
+/SSM2Demo/target
+/SSM2Demo/.classpath
+/SSM2Demo/.project
+/SSM2Demo/.idea
+/SSM2Demo/out
+/SSM2Demo/*.iml
