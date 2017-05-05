@@ -29,15 +29,15 @@ public class UserLoginServiceImpl implements UserLoginService {
 		if (!Tools.objectIsNullOrNot(userLoginVo.getUsername()) && !Tools.objectIsNullOrNot(userLoginVo.getPassword())) {
 			DemoUserExample demoUserExample = new DemoUserExample();
 			DemoUserExample.Criteria criteria = demoUserExample.createCriteria();
-			criteria.andUsernameEqualTo(userLoginVo.getUsername());
+			criteria.andUUsernameEqualTo(userLoginVo.getUsername());
 			
 			List<DemoUser> demoUsers = this.demoUserMapper.selectByExample(demoUserExample);
 			
 			if (!Tools.objectIsNullOrNot(demoUsers) && !Tools.objectIsNullOrNot(demoUsers.get(0))) {
 				DemoUser demoUser = demoUsers.get(0);
 				
-				if (CryptoUtils.verify(demoUser.getPassword(), userLoginVo.getPassword(), demoUser.getSalt())) {
-					User user = new User(demoUser.getId(), demoUser.getName(), demoUser.getAge(), demoUser.getSex(), demoUser.getBirthday());
+				if (CryptoUtils.verify(demoUser.getuPassword(), userLoginVo.getPassword(), demoUser.getuSalt())) {
+					User user = new User(demoUser.getuId(), demoUser.getuName(), demoUser.getuAge(), demoUser.getuSex(), demoUser.getuBirthday());
 					
 					return new ResultData(10000, "ok", user, System.currentTimeMillis());
 				} else {
