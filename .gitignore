@@ -11,3 +11,11 @@
 /SSM2Demo/.idea
 /SSM2Demo/out
 /SSM2Demo/*.iml
+
+/SBM2Demo/.settings
+/SBM2Demo/target
+/SBM2Demo/.classpath
+/SBM2Demo/.project
+/SBM2Demo/.idea
+/SBM2Demo/out
+/SBM2Demo/*.iml
