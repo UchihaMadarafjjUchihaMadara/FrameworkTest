@@ -2,16 +2,16 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.demo.mapper.DemoUserMapper" >
   <resultMap id="BaseResultMap" type="com.demo.pojo.DemoUser" >
-    <id column="u_id" property="uId" jdbcType="INTEGER" />
-    <result column="u_username" property="uUsername" jdbcType="VARCHAR" />
-    <result column="u_password" property="uPassword" jdbcType="VARCHAR" />
-    <result column="u_salt" property="uSalt" jdbcType="VARCHAR" />
-    <result column="u_name" property="uName" jdbcType="VARCHAR" />
-    <result column="u_age" property="uAge" jdbcType="SMALLINT" />
-    <result column="u_sex" property="uSex" jdbcType="VARCHAR" />
-    <result column="u_birthday" property="uBirthday" jdbcType="TIMESTAMP" />
-    <result column="u_create_time" property="uCreateTime" jdbcType="TIMESTAMP" />
-    <result column="u_update_time" property="uUpdateTime" jdbcType="TIMESTAMP" />
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="username" property="username" jdbcType="VARCHAR" />
+    <result column="password" property="password" jdbcType="VARCHAR" />
+    <result column="salt" property="salt" jdbcType="VARCHAR" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="age" property="age" jdbcType="SMALLINT" />
+    <result column="sex" property="sex" jdbcType="VARCHAR" />
+    <result column="birthday" property="birthday" jdbcType="TIMESTAMP" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -72,8 +72,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    u_id, u_username, u_password, u_salt, u_name, u_age, u_sex, u_birthday, u_create_time, 
-    u_update_time
+    id, username, password, salt, name, age, sex, birthday, create_time, update_time
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.demo.pojo.DemoUserExample" >
     select
@@ -93,11 +92,11 @@
     select 
     <include refid="Base_Column_List" />
     from demo_user
-    where u_id = #{uId,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from demo_user
-    where u_id = #{uId,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
   </delete>
   <delete id="deleteByExample" parameterType="com.demo.pojo.DemoUserExample" >
     delete from demo_user
@@ -106,79 +105,79 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.demo.pojo.DemoUser" >
-    insert into demo_user (u_id, u_username, u_password, 
-      u_salt, u_name, u_age, 
-      u_sex, u_birthday, u_create_time, 
-      u_update_time)
-    values (#{uId,jdbcType=INTEGER}, #{uUsername,jdbcType=VARCHAR}, #{uPassword,jdbcType=VARCHAR}, 
-      #{uSalt,jdbcType=VARCHAR}, #{uName,jdbcType=VARCHAR}, #{uAge,jdbcType=SMALLINT}, 
-      #{uSex,jdbcType=VARCHAR}, #{uBirthday,jdbcType=TIMESTAMP}, #{uCreateTime,jdbcType=TIMESTAMP}, 
-      #{uUpdateTime,jdbcType=TIMESTAMP})
+    insert into demo_user (id, username, password, 
+      salt, name, age, sex, 
+      birthday, create_time, update_time
+      )
+    values (#{id,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
+      #{salt,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{age,jdbcType=SMALLINT}, #{sex,jdbcType=VARCHAR}, 
+      #{birthday,jdbcType=TIMESTAMP}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}
+      )
   </insert>
   <insert id="insertSelective" parameterType="com.demo.pojo.DemoUser" >
     insert into demo_user
     <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="uId != null" >
-        u_id,
+      <if test="id != null" >
+        id,
       </if>
-      <if test="uUsername != null" >
-        u_username,
+      <if test="username != null" >
+        username,
       </if>
-      <if test="uPassword != null" >
-        u_password,
+      <if test="password != null" >
+        password,
       </if>
-      <if test="uSalt != null" >
-        u_salt,
+      <if test="salt != null" >
+        salt,
       </if>
-      <if test="uName != null" >
-        u_name,
+      <if test="name != null" >
+        name,
       </if>
-      <if test="uAge != null" >
-        u_age,
+      <if test="age != null" >
+        age,
       </if>
-      <if test="uSex != null" >
-        u_sex,
+      <if test="sex != null" >
+        sex,
       </if>
-      <if test="uBirthday != null" >
-        u_birthday,
+      <if test="birthday != null" >
+        birthday,
       </if>
-      <if test="uCreateTime != null" >
-        u_create_time,
+      <if test="createTime != null" >
+        create_time,
       </if>
-      <if test="uUpdateTime != null" >
-        u_update_time,
+      <if test="updateTime != null" >
+        update_time,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="uId != null" >
-        #{uId,jdbcType=INTEGER},
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
       </if>
-      <if test="uUsername != null" >
-        #{uUsername,jdbcType=VARCHAR},
+      <if test="username != null" >
+        #{username,jdbcType=VARCHAR},
       </if>
-      <if test="uPassword != null" >
-        #{uPassword,jdbcType=VARCHAR},
+      <if test="password != null" >
+        #{password,jdbcType=VARCHAR},
       </if>
-      <if test="uSalt != null" >
-        #{uSalt,jdbcType=VARCHAR},
+      <if test="salt != null" >
+        #{salt,jdbcType=VARCHAR},
       </if>
-      <if test="uName != null" >
-        #{uName,jdbcType=VARCHAR},
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
       </if>
-      <if test="uAge != null" >
-        #{uAge,jdbcType=SMALLINT},
+      <if test="age != null" >
+        #{age,jdbcType=SMALLINT},
       </if>
-      <if test="uSex != null" >
-        #{uSex,jdbcType=VARCHAR},
+      <if test="sex != null" >
+        #{sex,jdbcType=VARCHAR},
       </if>
-      <if test="uBirthday != null" >
-        #{uBirthday,jdbcType=TIMESTAMP},
+      <if test="birthday != null" >
+        #{birthday,jdbcType=TIMESTAMP},
       </if>
-      <if test="uCreateTime != null" >
-        #{uCreateTime,jdbcType=TIMESTAMP},
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="uUpdateTime != null" >
-        #{uUpdateTime,jdbcType=TIMESTAMP},
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=TIMESTAMP},
       </if>
     </trim>
   </insert>
@@ -191,35 +190,35 @@
   <update id="updateByExampleSelective" parameterType="map" >
     update demo_user
     <set >
-      <if test="record.uId != null" >
-        u_id = #{record.uId,jdbcType=INTEGER},
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=INTEGER},
       </if>
-      <if test="record.uUsername != null" >
-        u_username = #{record.uUsername,jdbcType=VARCHAR},
+      <if test="record.username != null" >
+        username = #{record.username,jdbcType=VARCHAR},
       </if>
-      <if test="record.uPassword != null" >
-        u_password = #{record.uPassword,jdbcType=VARCHAR},
+      <if test="record.password != null" >
+        password = #{record.password,jdbcType=VARCHAR},
       </if>
-      <if test="record.uSalt != null" >
-        u_salt = #{record.uSalt,jdbcType=VARCHAR},
+      <if test="record.salt != null" >
+        salt = #{record.salt,jdbcType=VARCHAR},
       </if>
-      <if test="record.uName != null" >
-        u_name = #{record.uName,jdbcType=VARCHAR},
+      <if test="record.name != null" >
+        name = #{record.name,jdbcType=VARCHAR},
       </if>
-      <if test="record.uAge != null" >
-        u_age = #{record.uAge,jdbcType=SMALLINT},
+      <if test="record.age != null" >
+        age = #{record.age,jdbcType=SMALLINT},
       </if>
-      <if test="record.uSex != null" >
-        u_sex = #{record.uSex,jdbcType=VARCHAR},
+      <if test="record.sex != null" >
+        sex = #{record.sex,jdbcType=VARCHAR},
       </if>
-      <if test="record.uBirthday != null" >
-        u_birthday = #{record.uBirthday,jdbcType=TIMESTAMP},
+      <if test="record.birthday != null" >
+        birthday = #{record.birthday,jdbcType=TIMESTAMP},
       </if>
-      <if test="record.uCreateTime != null" >
-        u_create_time = #{record.uCreateTime,jdbcType=TIMESTAMP},
+      <if test="record.createTime != null" >
+        create_time = #{record.createTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="record.uUpdateTime != null" >
-        u_update_time = #{record.uUpdateTime,jdbcType=TIMESTAMP},
+      <if test="record.updateTime != null" >
+        update_time = #{record.updateTime,jdbcType=TIMESTAMP},
       </if>
     </set>
     <if test="_parameter != null" >
@@ -228,16 +227,16 @@
   </update>
   <update id="updateByExample" parameterType="map" >
     update demo_user
-    set u_id = #{record.uId,jdbcType=INTEGER},
-      u_username = #{record.uUsername,jdbcType=VARCHAR},
-      u_password = #{record.uPassword,jdbcType=VARCHAR},
-      u_salt = #{record.uSalt,jdbcType=VARCHAR},
-      u_name = #{record.uName,jdbcType=VARCHAR},
-      u_age = #{record.uAge,jdbcType=SMALLINT},
-      u_sex = #{record.uSex,jdbcType=VARCHAR},
-      u_birthday = #{record.uBirthday,jdbcType=TIMESTAMP},
-      u_create_time = #{record.uCreateTime,jdbcType=TIMESTAMP},
-      u_update_time = #{record.uUpdateTime,jdbcType=TIMESTAMP}
+    set id = #{record.id,jdbcType=INTEGER},
+      username = #{record.username,jdbcType=VARCHAR},
+      password = #{record.password,jdbcType=VARCHAR},
+      salt = #{record.salt,jdbcType=VARCHAR},
+      name = #{record.name,jdbcType=VARCHAR},
+      age = #{record.age,jdbcType=SMALLINT},
+      sex = #{record.sex,jdbcType=VARCHAR},
+      birthday = #{record.birthday,jdbcType=TIMESTAMP},
+      create_time = #{record.createTime,jdbcType=TIMESTAMP},
+      update_time = #{record.updateTime,jdbcType=TIMESTAMP}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -245,47 +244,47 @@
   <update id="updateByPrimaryKeySelective" parameterType="com.demo.pojo.DemoUser" >
     update demo_user
     <set >
-      <if test="uUsername != null" >
-        u_username = #{uUsername,jdbcType=VARCHAR},
+      <if test="username != null" >
+        username = #{username,jdbcType=VARCHAR},
       </if>
-      <if test="uPassword != null" >
-        u_password = #{uPassword,jdbcType=VARCHAR},
+      <if test="password != null" >
+        password = #{password,jdbcType=VARCHAR},
       </if>
-      <if test="uSalt != null" >
-        u_salt = #{uSalt,jdbcType=VARCHAR},
+      <if test="salt != null" >
+        salt = #{salt,jdbcType=VARCHAR},
       </if>
-      <if test="uName != null" >
-        u_name = #{uName,jdbcType=VARCHAR},
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
       </if>
-      <if test="uAge != null" >
-        u_age = #{uAge,jdbcType=SMALLINT},
+      <if test="age != null" >
+        age = #{age,jdbcType=SMALLINT},
       </if>
-      <if test="uSex != null" >
-        u_sex = #{uSex,jdbcType=VARCHAR},
+      <if test="sex != null" >
+        sex = #{sex,jdbcType=VARCHAR},
       </if>
-      <if test="uBirthday != null" >
-        u_birthday = #{uBirthday,jdbcType=TIMESTAMP},
+      <if test="birthday != null" >
+        birthday = #{birthday,jdbcType=TIMESTAMP},
       </if>
-      <if test="uCreateTime != null" >
-        u_create_time = #{uCreateTime,jdbcType=TIMESTAMP},
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="uUpdateTime != null" >
-        u_update_time = #{uUpdateTime,jdbcType=TIMESTAMP},
+      <if test="updateTime != null" >
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
       </if>
     </set>
-    where u_id = #{uId,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.demo.pojo.DemoUser" >
     update demo_user
-    set u_username = #{uUsername,jdbcType=VARCHAR},
-      u_password = #{uPassword,jdbcType=VARCHAR},
-      u_salt = #{uSalt,jdbcType=VARCHAR},
-      u_name = #{uName,jdbcType=VARCHAR},
-      u_age = #{uAge,jdbcType=SMALLINT},
-      u_sex = #{uSex,jdbcType=VARCHAR},
-      u_birthday = #{uBirthday,jdbcType=TIMESTAMP},
-      u_create_time = #{uCreateTime,jdbcType=TIMESTAMP},
-      u_update_time = #{uUpdateTime,jdbcType=TIMESTAMP}
-    where u_id = #{uId,jdbcType=INTEGER}
+    set username = #{username,jdbcType=VARCHAR},
+      password = #{password,jdbcType=VARCHAR},
+      salt = #{salt,jdbcType=VARCHAR},
+      name = #{name,jdbcType=VARCHAR},
+      age = #{age,jdbcType=SMALLINT},
+      sex = #{sex,jdbcType=VARCHAR},
+      birthday = #{birthday,jdbcType=TIMESTAMP},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

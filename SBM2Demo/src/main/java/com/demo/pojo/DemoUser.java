@@ -3,103 +3,103 @@ package com.demo.pojo;
 import java.util.Date;
 
 public class DemoUser {
-    private Integer uId;
+    private Integer id;
 
-    private String uUsername;
+    private String username;
 
-    private String uPassword;
+    private String password;
 
-    private String uSalt;
+    private String salt;
 
-    private String uName;
+    private String name;
 
-    private Short uAge;
+    private Short age;
 
-    private String uSex;
+    private String sex;
 
-    private Date uBirthday;
+    private Date birthday;
 
-    private Date uCreateTime;
+    private Date createTime;
 
-    private Date uUpdateTime;
+    private Date updateTime;
 
-    public Integer getuId() {
-        return uId;
+    public Integer getId() {
+        return id;
     }
 
-    public void setuId(Integer uId) {
-        this.uId = uId;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    public String getuUsername() {
-        return uUsername;
+    public String getUsername() {
+        return username;
     }
 
-    public void setuUsername(String uUsername) {
-        this.uUsername = uUsername == null ? null : uUsername.trim();
+    public void setUsername(String username) {
+        this.username = username == null ? null : username.trim();
     }
 
-    public String getuPassword() {
-        return uPassword;
+    public String getPassword() {
+        return password;
     }
 
-    public void setuPassword(String uPassword) {
-        this.uPassword = uPassword == null ? null : uPassword.trim();
+    public void setPassword(String password) {
+        this.password = password == null ? null : password.trim();
     }
 
-    public String getuSalt() {
-        return uSalt;
+    public String getSalt() {
+        return salt;
     }
 
-    public void setuSalt(String uSalt) {
-        this.uSalt = uSalt == null ? null : uSalt.trim();
+    public void setSalt(String salt) {
+        this.salt = salt == null ? null : salt.trim();
     }
 
-    public String getuName() {
-        return uName;
+    public String getName() {
+        return name;
     }
 
-    public void setuName(String uName) {
-        this.uName = uName == null ? null : uName.trim();
+    public void setName(String name) {
+        this.name = name == null ? null : name.trim();
     }
 
-    public Short getuAge() {
-        return uAge;
+    public Short getAge() {
+        return age;
     }
 
-    public void setuAge(Short uAge) {
-        this.uAge = uAge;
+    public void setAge(Short age) {
+        this.age = age;
     }
 
-    public String getuSex() {
-        return uSex;
+    public String getSex() {
+        return sex;
     }
 
-    public void setuSex(String uSex) {
-        this.uSex = uSex == null ? null : uSex.trim();
+    public void setSex(String sex) {
+        this.sex = sex == null ? null : sex.trim();
     }
 
-    public Date getuBirthday() {
-        return uBirthday;
+    public Date getBirthday() {
+        return birthday;
     }
 
-    public void setuBirthday(Date uBirthday) {
-        this.uBirthday = uBirthday;
+    public void setBirthday(Date birthday) {
+        this.birthday = birthday;
     }
 
-    public Date getuCreateTime() {
-        return uCreateTime;
+    public Date getCreateTime() {
+        return createTime;
     }
 
-    public void setuCreateTime(Date uCreateTime) {
-        this.uCreateTime = uCreateTime;
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 
-    public Date getuUpdateTime() {
-        return uUpdateTime;
+    public Date getUpdateTime() {
+        return updateTime;
     }
 
-    public void setuUpdateTime(Date uUpdateTime) {
-        this.uUpdateTime = uUpdateTime;
+    public void setUpdateTime(Date updateTime) {
+        this.updateTime = updateTime;
     }
 }

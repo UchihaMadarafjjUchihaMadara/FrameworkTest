@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50718
 File Encoding         : 65001
 
-Date: 2017-05-05 11:29:25
+Date: 2017-05-08 07:43:07
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -20,17 +20,17 @@ SET FOREIGN_KEY_CHECKS=0;
 -- ----------------------------
 DROP TABLE IF EXISTS `demo_user`;
 CREATE TABLE `demo_user` (
-  `u_id` int(11) NOT NULL AUTO_INCREMENT,
-  `u_username` varchar(50) DEFAULT NULL,
-  `u_password` varchar(100) DEFAULT NULL,
-  `u_salt` varchar(50) DEFAULT NULL,
-  `u_name` varchar(32) DEFAULT NULL,
-  `u_age` smallint(3) DEFAULT NULL,
-  `u_sex` varchar(1) DEFAULT NULL,
-  `u_birthday` datetime DEFAULT NULL,
-  `u_create_time` datetime DEFAULT NULL,
-  `u_update_time` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`u_id`)
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(50) DEFAULT NULL,
+  `password` varchar(100) DEFAULT NULL,
+  `salt` varchar(50) DEFAULT NULL,
+  `name` varchar(32) DEFAULT NULL,
+  `age` smallint(3) DEFAULT NULL,
+  `sex` varchar(1) DEFAULT NULL,
+  `birthday` datetime DEFAULT NULL,
+  `create_time` datetime DEFAULT NULL,
+  `update_time` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
