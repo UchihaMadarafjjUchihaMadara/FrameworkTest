@@ -1,0 +1,26 @@
+---
+debug: true
+
+server:
+  port: 8080
+  
+spring:
+  datasource:
+    sbm2s:
+      type: com.alibaba.druid.pool.DruidDataSource
+      url: jdbc:mysql://127.0.0.1:3306/sbm2s?characterEncoding=UTF-8
+      username: root
+      password: 
+      driver-class-name: com.mysql.jdbc.Driver
+      minIdle: 1
+      maxActive: 2
+      initialSize: 1
+      timeBetweenEvictionRunsMillis: 3000
+      minEvictableIdleTimeMillis: 300000
+      validationQuery: SELECT 'ZTM' FROM DUAL
+      testWhileIdle: true
+      testOnBorrow: false
+      testOnReturn: false  
+      
+mybatis:
+  createSqlSessionTemplate: false
