@@ -23,3 +23,13 @@
 /SBM2Demo/*.iml
 /SBM2Demo/.apt_generated
 /SBM2Demo/.factorypath
+
+/SBM2SDemo/.settings
+/SBM2SDemo/target
+/SBM2SDemo/.classpath
+/SBM2SDemo/.project
+/SBM2SDemo/.idea
+/SBM2SDemo/out
+/SBM2SDemo/*.iml
+/SBM2SDemo/.apt_generated
+/SBM2SDemo/.factorypath
